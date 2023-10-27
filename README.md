@@ -16,7 +16,7 @@ The key features of my project are:-
 
 
 ## Entity-Relationship Diagram (ERD)
-
+![ERD](https://github.com/Akanchibail/Web_Project/blob/main/ERD.PNG)
 
 ## Database Schema
 
