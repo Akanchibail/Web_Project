@@ -20,7 +20,7 @@ The key features of my project are:-
 ![ERD](https://github.com/Akanchibail/Web_Project/blob/main/ERD.PNG)
 
 ## Relation Diagram
-https://github.com/Akanchibail/Web_Project/blob/main/Relation.PNG
+![ERD](https://github.com/Akanchibail/Web_Project/blob/main/Relation.PNG)
 
 ## SQL Code
 CREATE TABLE User (
