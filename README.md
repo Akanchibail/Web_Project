@@ -1,50 +1,55 @@
 # Pen It Down
 
-Briefly describe your project, its purpose, and what it does.
+"Pen It Down" is a note-taking application designed to help users easily capture and organize their thoughts, ideas, and information. It serves as a digital platform for users to create, edit, and store notes, making it convenient to access and manage their personal and work-related content. The app enables users to categorize notes, search for specific information, and synchronize their notes across multiple devices for seamless accessibility. "Pen It Down" streamlines the process of taking and managing notes, making it a valuable tool for productivity and organization.
 
 ## Table of Contents
 
-- [Overview](#overview)
 - [Features](#features)
 - [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
 - [Database Schema](#database-schema)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Overview
-
-Provide an overview of your project. Explain what inspired you to create it, what problem it solves, or what it aims to achieve.
 
 ## Features
 
-List the key features of your project. For example:
+The key features of my project are:-
 - User registration and login
 - Create and manage notes
-- Search functionality
+
 
 ## Entity-Relationship Diagram (ERD)
 
-![ERD](images/erd.png)
-
-Include an image of your Entity-Relationship Diagram (ERD) to help users understand the database structure.
 
 ## Database Schema
 
-Describe the structure of your database, including the tables and their relationships. Provide SQL code for creating the tables and any important constraints.
+User Schema:
 
-## Getting Started
+userid (Primary Key): A unique integer identifying each user. firstname: A field to store the user's first name. lastname: A field to store the user's last name. username: A field to store the user's chosen username. password: A field to store the user's password.
 
-Explain how to get started with your project. Include installation instructions, dependencies, and any initial setup that users need to perform.
+Note Schema:
 
-```bash
-# Installation
-npm install
+noteid (Primary Key): An integer that serves as a unique identifier for each note. content: A text field used to capture the content or description of each note. userid (Foreign Key): An integer that references the userid in the "User" table, establishing a relationship between users and their respective notes.
 
-# Configuration
-cp config.example.json config.json
-# Modify config.json with your database credentials
+SQL code for creating the tables and any important constraints:
 
-# Database Setup
-npm run db:migrate
+CREATE TABLE User (
+    userid INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE Note (
+    noteid INT AUTO_INCREMENT PRIMARY KEY,
+    content TEXT NOT NULL,
+    userid INT,
+    FOREIGN KEY (userid) REFERENCES User(userid)
+);
+
+This SQL code creates the "User" and "Note" tables with the following features:
+
+The "User" table has an auto-incrementing primary key userid and "NOT NULL" constraints for the first name, last name, username, and password.
+The "Note" table also has an auto-incrementing primary key noteid and a "NOT NULL" constraint for the content. It establishes a relationship with the "User" table via the userid foreign key.
+
+
+
