@@ -6,7 +6,8 @@
 
 - [Features](#features)
 - [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-- [Database Schema](#database-schema)
+- [Relations]
+- SQL Code
 
 ## Features
 
@@ -18,24 +19,16 @@ The key features of my project are:-
 ## Entity-Relationship Diagram (ERD)
 ![ERD](https://github.com/Akanchibail/Web_Project/blob/main/ERD.PNG)
 
-## Database Schema
+## Relation Diagram
 
-User Schema:
 
-userid (Primary Key): A unique integer identifying each user. firstname: A field to store the user's first name. lastname: A field to store the user's last name. username: A field to store the user's chosen username. password: A field to store the user's password.
-
-Note Schema:
-
-noteid (Primary Key): An integer that serves as a unique identifier for each note. content: A text field used to capture the content or description of each note. userid (Foreign Key): An integer that references the userid in the "User" table, establishing a relationship between users and their respective notes.
-
-SQL code for creating the tables and any important constraints:
-
+## SQL Code
 CREATE TABLE User (
     userid INT AUTO_INCREMENT PRIMARY KEY,
-    firstname VARCHAR(255) NOT NULL,
-    lastname VARCHAR(255) NOT NULL,
-    username VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL
+    firstname VARCHAR(240) NOT NULL,
+    lastname VARCHAR(240) NOT NULL,
+    username VARCHAR(240) NOT NULL,
+    password VARCHAR(240) NOT NULL
 );
 
 
@@ -46,10 +39,7 @@ CREATE TABLE Note (
     FOREIGN KEY (userid) REFERENCES User(userid)
 );
 
-This SQL code creates the "User" and "Note" tables with the following features:
 
-The "User" table has an auto-incrementing primary key userid and "NOT NULL" constraints for the first name, last name, username, and password.
-The "Note" table also has an auto-incrementing primary key noteid and a "NOT NULL" constraint for the content. It establishes a relationship with the "User" table via the userid foreign key.
 
 
 
