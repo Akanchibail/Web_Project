@@ -6,7 +6,7 @@
 
 - [Features](#features)
 - [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-- [Relations]
+- [Relations](#relations)
 - SQL Code
 
 ## Features
