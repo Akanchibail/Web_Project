@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
             };
         
             console.log(user);
-            //window.alert("hi");
         });
 
     }
