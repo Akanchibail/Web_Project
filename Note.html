@@ -12,16 +12,16 @@
     </h1>
     
     <h2><b>Want to make a note of something important? Use the below textbox....</b></h2>
-    <form>
-        <div >
+    <form id="noteForm">
+                <div >
             <label for="note"><b>Note:</b> </label>
             <!--<input style="height: 200px; width: 400px;">-->
-            <textarea rows="30" cols="12"></textarea>
+            <textarea  name="note" id="note" rows="30" cols="12"></textarea>
             <br><br>
         </div>
 
         <div>
-            <input type="button" value="SUBMIT">
+            <input type="submit" value="SUBMIT">
         </div>
     </form>
 
@@ -35,5 +35,7 @@
             <li><a href="Note.html">Note</a></li>
         </ul>
     </nav>
+
+    <script src="note.js"></script>
 </body>
 </html>
