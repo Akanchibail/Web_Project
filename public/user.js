@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
         registrationForm.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            var firstName = document.getElementById('firstname').value;
-            var lastName = document.getElementById('lastname').value;
-            var userName = document.getElementById('username').value;
+            var firstname = document.getElementById('firstname').value;
+            var lastname = document.getElementById('lastname').value;
+            var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
         
             var user = {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loginForm.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            var userName = document.getElementById('username').value;
+            var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
         
             var user = {
