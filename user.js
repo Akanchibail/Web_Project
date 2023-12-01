@@ -1,41 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var registrationForm = document.getElementById('registrationForm');
-    var loginForm = document.getElementById('loginForm');
+const express = require('express');
+const User = require('../models/user');
+const router = express.Router();
 
-    if (registrationForm) {
-        registrationForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            var firstName = document.getElementById('firstname').value;
-            var lastName = document.getElementById('lastname').value;
-            var userName = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-        
-            var user = {
-                firstname: firstname,
-                lastname: lastname,
-                username: username,
-                password: password
-            };
-        
-            console.log(user);
-        });
+router.get('/', (req,res) => {
+    try{
+        const users = User.getUsers();
+        res.send(users);
+    }catch (err){
+        res.status(401).send({message: error.message});
     }
+});
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            var userName = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-        
-            var user = {
-                username: username,
-                password: password
-            };
-        
-            console.log(user);
-        });
-
-    }
-        });
+module.exports = router;
