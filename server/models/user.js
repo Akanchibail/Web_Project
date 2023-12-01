@@ -1,17 +1,17 @@
 const users = [
     {
-        userId: 12345,
-        userName: "cathy123",
+        userid: 12345,
+        username: "cathy123",
         password: "bestPswd12"
     },
     {
-        userId: 55555,
-        userName: "fredburger2",
+        userid: 55555,
+        username: "fredburger2",
         password: "helloWorld42" 
     },
     {
-        userId: 78942,
-        userName: "coolcathy",
+        userid: 78942,
+        username: "coolcathy",
         password: "%ic^ecream532"
     },
 ];
