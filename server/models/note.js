@@ -1,15 +1,48 @@
-const notes = [
-    {
-       content : "Hi",
-    },
-    {
-       content :"Hello",
-    },
-    {
-        content : "Good Morning",
-    },
-];
+const con = require('./db_connect');
 
-let getNotes = () =>notes;
+async function initializeNoteTable() {
+  const sql = `
+    CREATE TABLE IF NOT EXISTS Note (
+      noteid INT AUTO_INCREMENT PRIMARY KEY,
+      content TEXT NOT NULL,
+      userid INT,
+      FOREIGN KEY (userid) REFERENCES User(userid)
+    );
+  `;
 
-module.exports = { getNotes };
+  await con.query(sql);
+}
+
+initializeNoteTable();
+
+// CRUD operations for notes
+async function findNote(noteid) {
+  const sql = `SELECT * FROM Note WHERE noteid = ${noteid}`;
+  return await con.query(sql);
+}
+
+async function createNote({ content, userid }) {
+  const sql = `
+    INSERT INTO Note (content, userid)
+    VALUES ("${content}", ${userid})
+  `;
+
+  await con.query(sql);
+}
+
+async function updateNoteContent(noteid, { content }) {
+  const sql = `
+    UPDATE Note
+    SET content = "${content}"
+    WHERE noteid = ${noteid}
+  `;
+
+  await con.query(sql);
+}
+
+async function removeNote(noteid) {
+  const sql = `DELETE FROM Note WHERE noteid = ${noteid}`;
+  await con.query(sql);
+}
+
+module.exports = { findNote, createNote, updateNoteContent, removeNote };
