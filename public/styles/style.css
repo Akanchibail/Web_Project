@@ -1,0 +1,153 @@
+h1{
+    font-size: 80px;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 5px; 
+    border-radius: 5px; 
+    background-color: beige;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color:rgb(24, 23, 23);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-shadow: 2px 2px 2px rgb(73, 210, 228);
+}
+
+h1 img{
+    border-radius: 25px;
+    width: 100px;
+    height:100px;
+    margin-left: 10px;
+    border:2px solid black;
+}
+
+h1:hover{
+    background-color: rgb(230, 136, 14);
+}
+
+h2{
+    color:rgb(65, 42, 165);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-shadow: 5px 5px 5px hotpink;
+}
+
+body.register{
+    /* <background-color:blanchedalmond> */
+    background-image: url('../Images/image1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+body.login{
+    /* background-color: burlywood; */
+    background-image: url('../Images/image6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+body.note{
+    /* background-color: burlywood; */
+    background-image: url('../Images/image3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+label{
+    color:rgb(240, 11, 11);
+    font-size:larger;
+    font-style: italic;
+    text-align: center;
+}
+
+input{
+    color: rgb(17, 16, 16);
+    font-weight: 800;
+    font-size: larger;
+    
+}
+
+p{
+    color: black;
+    font-size: larger;
+    font-family: serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+nav{
+    text-decoration: none;
+    color: rgb(16, 16, 236);
+    border: 3px solid rgb(153, 51, 107);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: larger;
+    font-style: italic;
+}
+
+nav{
+    text-decoration: none;
+    color: rgb(70,102,102);
+    border: 3px solid rgb(153, 51, 93);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+form{
+    text-decoration: none;
+    color: rgb(70,102,102);
+    border: 3px solid brown;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+a:link{
+        color: rgb(126,22,22);
+        background-color: transparent;
+        text-decoration: none;
+}
+
+a:visited{
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:hover{
+    color:rgb(6,111,143);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+input[type="text"],[type="password"]
+{
+    background:transparent;
+}
+
+textarea{
+    background-color: rgba(247, 207, 207, 0.2);
+    width: 400px;
+    height: 200px;
+}
+
+/* .textbox{
+    background-color: rgb(75, 71, 67);
+} */
+
+nav:hover{
+    background-color:wheat;
+}
+
+input[type="text"],[type="password"]
+{
+    width:25%;
+    margin-bottom: 5px;
+    padding: 3px;
+}
