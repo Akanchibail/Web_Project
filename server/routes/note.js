@@ -12,6 +12,16 @@ router
     }
   })
 
+  router
+  .post('/allnotes', async (req, res) => {
+    console.log(req.body)
+    try {
+      const note = await Note.getNotes(req.body.userid);
+      res.status(200).send(note);
+    } catch (err) {
+      res.status(500).send({ errorMessage: err.message });
+    }
+  })
   .post('/createNote', async (req, res) => {
     try {
       await Note.createNote(req.body);

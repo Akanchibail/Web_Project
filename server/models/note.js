@@ -30,6 +30,21 @@ async function createNote({ content, userid }) {
   await con.query(sql);
 }
 
+const getNotes = async (userid) => {
+  console.log(userid)
+  try{
+    const sql = `SELECT * FROM note  WHERE userid = ${userid}
+    `;
+  
+    const notes = await con.query(sql);
+    console.log(notes)
+    return notes;
+  }
+  catch(e){
+    console.log("Error occured", e);
+  }
+}
+
 async function updateNoteContent(noteid, { content }) {
   const sql = `
     UPDATE Note
@@ -45,4 +60,4 @@ async function removeNote(noteid) {
   await con.query(sql);
 }
 
-module.exports = { findNote, createNote, updateNoteContent, removeNote };
+module.exports = { findNote, createNote, updateNoteContent, removeNote, getNotes };

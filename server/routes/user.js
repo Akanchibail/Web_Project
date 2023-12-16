@@ -1,25 +1,31 @@
 const express = require('express');
 const Note = require('../models/note');
 const router = express.Router();
+const User = require('../models/user')
 
 router
-  .get('/getNote/:noteid', async (req, res) => {
-    try {
-      const note = await Note.findNote(req.params.noteid);
-      res.send(note);
-    } catch (err) {
-      res.status(500).send({ errorMessage: err.message });
-    }
-  })
+      
+  // login post
+.post('/login', async (req, res) => {
+  console.log(req.body)
+  try {
+    const user = await User.login(req.body)
+    res.send({...user, Password: undefined})
+  } catch(err) {
+    res.status(401).send({message: err.message})
+  }
+})
 
-  .post('/createNote', async (req, res) => {
-    try {
-      await Note.createNote(req.body);
-      res.status(201).send({ successMessage: 'Note created successfully' });
-    } catch (err) {
-      res.status(400).send({ errorMessage: err.message });
-    }
-  })
+// register route
+.post('/register', async (req, res) => {
+  try {
+    console.log(req.body)
+    const user = await User.register(req.body)
+    res.send({...user, Password: undefined})
+  } catch(err) {
+    res.status(401).send({message: err.message})
+  }
+})
 
   .put('/updateNote/:noteid', async (req, res) => {
     try {
